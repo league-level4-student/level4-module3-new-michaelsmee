@@ -32,6 +32,36 @@ public class LinkedListDemo {
          * 
          */
 
+    	
+    	LinkedList<String> list = new LinkedList<String>();
+    	
+    	
+    	list.add("start");
+    	list.add("middle");
+    	list.add("end");
+    	
+    	list.print();
+    	Node<String> newHead = new Node<String>("new start");
+    	
+    	
+    	list.getHead().setPrev(newHead);
+    	newHead.setNext(list.getHead());
+    	
+    	
+    	list.setHead(newHead);
+    	
+    	
+    	list.print();
+    	
+    	Node<String> newTail = new Node<String>("new tail");
+    	
+    	list.getTail().setNext(newTail);
+    	newTail.setPrev(list.getTail());
+    	
+    	list.setTail(newTail);
+    	
+    	list.print();
+    	
     }
 
 }
